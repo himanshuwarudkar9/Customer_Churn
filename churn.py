@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 
 # Load the trained model
-model = pickle.load(open('Trained_model.pkl', 'rb'))
+model = pickle.load(open('Churnmodel.pkl', 'rb'))
 
 # Define function to preprocess input data
 def preprocess_input(age, gender, location, subscription_length, monthly_bill, total_usage):
