@@ -1,9 +1,9 @@
 import streamlit as st
-import pickle
+import joblib
 import numpy as np
 
 # Load the trained model
-model = pickle.load(open('Churnmodel.pkl', 'rb'))
+model = joblib.load('Churnmodel.pkl')
 
 # Define function to preprocess input data
 def preprocess_input(age, gender, location, subscription_length, monthly_bill, total_usage):
