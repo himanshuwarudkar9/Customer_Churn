@@ -15,11 +15,21 @@ def predict_churn(data):
     prediction = model.predict(data)
     return prediction
 
-def main():   
-    st.title("Customer Churn Prediction")
+def set_background_image(image_url):
+    style = f"""
+    <style>
+    body {{
+        background-image: url("{image_url}");
+        background-size: cover;
+    }}
+    </style>
+    """
+    st.markdown(style, unsafe_allow_html=True)
 
-    # Add a picture or logo
-    st.image('https://www.scnsoft.com/blog-pictures/business-intelligence/customer-churn-analysis.png', width=200)
+def main():   
+    set_background_image('https://www.scnsoft.com/blog-pictures/business-intelligence/customer-churn-analysis.png')
+    
+    st.title("Customer Churn Prediction")
 
     age = st.number_input("Age", min_value=0, step=1)
     gender = st.radio("Gender", ['Male', 'Female'])
